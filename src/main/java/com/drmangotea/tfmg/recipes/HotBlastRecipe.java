@@ -55,6 +55,6 @@ public class HotBlastRecipe extends StandardProcessingRecipe<HotBlastRecipeInput
     public boolean matches(HotBlastRecipeInput input, Level worldIn) {
         if (input.isEmpty())
             return false;
-        return getPrimaryIngredient().test(input.air) && getSecondaryIngredient().test(input.fuel);
+        return getPrimaryIngredient().test(input.air()) && getSecondaryIngredient().test(input.fuel());
     }
 }
