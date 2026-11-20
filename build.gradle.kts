@@ -111,8 +111,8 @@ repositories {
     maven("https://api.modrinth.com/maven")
     maven("https://dl.cloudsmith.io/public/wolfieboy09/liquid-fuel-reburned/maven/")
     maven {
-        name = "Krystals Releases Maven"
-        url = uri("https://krystalsmaven.oreostack.uk/releases") // Rutile
+        name = "Metallurgists' Maven"
+        url = uri("https://maven.metallurgists.dev/releases") // Rutile
     }
     maven {
         name = "DevAuth Maven"
