@@ -136,7 +136,6 @@ public class TFMGMixingRecipeGen extends MixingRecipeGen {
 	);
 
 	//Overriding CBC recipes
-	//TODO: find & override CBC cast iron recipe
 	GeneratedRecipe
 		ALLOY_NETHERSTEEL_CAST_IRON = overrideOther(cbcLoc("alloy_nethersteel_cast_iron")),
 		ALLOY_NETHERSTEEL_STEEL = overrideOther(cbcLoc("alloy_nethersteel_steel")),

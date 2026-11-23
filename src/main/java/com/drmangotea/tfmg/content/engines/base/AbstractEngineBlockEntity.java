@@ -143,9 +143,8 @@ public abstract class AbstractEngineBlockEntity extends GeneratingKineticBlockEn
         } else drainFuel = true;
     }
 
-	//TODO: Make this more configurable
-    public void manageFuelAndExhaust() {
-        exhaustTank.forceFill(new FluidStack(exhaustFluid(), Math.min(300, getFuelConsumption())), IFluidHandler.FluidAction.EXECUTE);
+	public void manageFuelAndExhaust() {
+        exhaustTank.forceFill(new FluidStack(exhaustFluid(), getFuelConsumption()), IFluidHandler.FluidAction.EXECUTE);
         fuelTank.forceDrain(getFuelConsumption(), IFluidHandler.FluidAction.EXECUTE);
         if (fuelTank.isEmpty())
             updateRotation();
