@@ -41,4 +41,4 @@ jobs:
           KRYSTAL_MAVEN_USER: ${{ secrets.KRYSTAL_MAVEN_USER }}
           KRYSTAL_MAVEN_PASSWORD: ${{ secrets.KRYSTAL_MAVEN_TOKEN }}
           MOD_BUILD_NUMBER: ${{ steps.buildnum.outputs.build_number }}
-        run: ./gradlew publishMavenJavaPublicationToKrystal-snapshot-mavenRepository
+        run: ./gradlew publishMavenJavaPublicationToMetallurgists-snapshot-mavenRepository

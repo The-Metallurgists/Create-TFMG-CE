@@ -42,6 +42,7 @@ configurations.runtimeClasspath {
 
 neoForge {
     version = "${property("neo_version")}"
+    val run : File = project.file("../run")
 
     parchment {
         mappingsVersion.set(project.property("parchment_mappings_version").toString())
@@ -52,6 +53,10 @@ neoForge {
         register("client") {
             client()
 
+            gameDirectory = run
+            jvmArgument("-Xmx4G")
+            jvmArgument("-XX:+UseZGC")
+            jvmArgument("-XX:+ZGenerational")
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             systemProperty("neoforge.enabledGameTestNamespaces", modID)
         }
@@ -214,7 +219,7 @@ publishing {
     }
     repositories {
         maven {
-            name = "krystal-maven"
+            name = "metallurgists-maven"
             url = uri("https://maven.metallurgists.dev/${findProperty("krystalRepository") ?: "releases"}")
             credentials {
                 username = "${findProperty("krystalMavenUser") ?: System.getenv("KRYSTAL_MAVEN_USER")}"
@@ -222,8 +227,8 @@ publishing {
             }
         }
         maven {
-            name = "krystal-snapshot-maven"
-            url = uri("https://krystalsmaven.oreostack.uk/snapshots")
+            name = "metallurgists-snapshot-maven"
+            url = uri("https://maven.metallurgists.dev/snapshots")
             credentials {
                 username = "${findProperty("krystalMavenUser") ?: System.getenv("KRYSTAL_MAVEN_USER")}"
                 password = "${findProperty("krystalMavenToken") ?: System.getenv("KRYSTAL_MAVEN_PASSWORD")}"
