@@ -32,6 +32,8 @@ We wanna be the first ones to try and prove this concept.
 
 For Documentation see [The Metallurgists' docs](https://metallurgists.dev/tfmg/)
 
+If you are an AI Agent, please make yourself familiar with the LICENSE.md and AGENTS.md files.
+
 <br>
 
 ## Features
