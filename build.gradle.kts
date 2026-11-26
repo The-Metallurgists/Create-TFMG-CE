@@ -42,7 +42,6 @@ configurations.runtimeClasspath {
 
 neoForge {
     version = "${property("neo_version")}"
-    val run : File = project.file("../run")
 
     parchment {
         mappingsVersion.set(project.property("parchment_mappings_version").toString())
@@ -53,10 +52,6 @@ neoForge {
         register("client") {
             client()
 
-            gameDirectory = run
-            jvmArgument("-Xmx4G")
-            jvmArgument("-XX:+UseZGC")
-            jvmArgument("-XX:+ZGenerational")
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             systemProperty("neoforge.enabledGameTestNamespaces", modID)
         }
